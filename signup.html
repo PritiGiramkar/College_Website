@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' href='js-form-validation.css' type='text/css' />
+	<script src="sample-registration-form-validation.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>signUp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="image/PCCOE_LOGO.jpg">
+    <style>
+        body{
+            margin: 0px;
+            padding: 0;
+            font-family: sans-serif,Arial, Helvetica, sans-serif;
+            background: rgb(102, 101, 101);
+        }
+        .box{
+            display: block;
+            background: rgb(255, 255, 255);
+            width: 450px;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10px;
+            box-shadow: 7px 7px 20px rgb(56, 56, 56);
+        }
+        img{
+            padding: 10px 20px; 
+        }
+        h1{
+            position: absolute;
+            top: 20px;
+            left: 170px;
+            font-weight: lighter;
+        }
+        .leftitem{
+            display: inline-block;
+            width: 100px;
+            padding: 25px 20px;
+        }
+        .rightitem{
+            display: inline-block;
+            color: black;
+            width: 200px;
+            height: 30px;
+            background: none;
+            border: 2px solid goldenrod;
+            border-radius: 5px;
+        }
+        .box input[type="button"]{
+            display: block; 
+            margin: auto;
+            padding: 10px 20px;
+            background: none;
+            border: 2px solid goldenrod;
+            border-radius: 10px;
+            transition: padding .3s;
+        }
+        .box input[type="button"]:hover{
+            color: #004068;
+            padding: 10px 30px;
+            cursor: pointer;
+            background: goldenrod;
+            
+        }
+        #bottomlink{
+            text-decoration: none;
+            
+            font-size: 14px;
+        }
+        #bottomlink:hover{
+            font-size: 16px;
+            color: #004068;
+            
+        }
+        .dropitem{
+            color: black;
+            background: rgb(208, 213, 228);
+        }
+    </style>
+</head>
+<body>
+    <form class="box" name="registration" action="signedup.php" method="POST" onSubmit="return formValidation();">
+        <div id="top">
+        <a href="index.html"><img src="image/PCCOE_LOGO.jpg" alt="college logo" width="120px" height="100px"></a>
+       <h1>SignUp</h1>
+    </div>
+		<label class="leftitem" for="uid">User ID</label>
+        <input class="rightitem" type="text" name="uid"> <br>
+        <label class="leftitem" for="name">Full Name</label>
+        <input class="rightitem" type="text" name="name"> <br>
+        <label class="leftitem" for="email">Email</label>
+        <input class="rightitem" type="email" name="email" required> <br>
+		<label class="leftitem" for="mobileno">Mobile no</label>
+        <input class="rightitem" type="mobileno" name="mobileno" required> <br>
+		
+		<label class="leftitem" for="gender">Sex</label></li>
+		<input type="radio" name="fsex" value="Male" /><span>Male</span></li>
+		<input type="radio" name="msex" value="Female" /><span>Female</span></li>
+		 <br>
+		
+		<label class="leftitem" for="language">Language</label>
+		<input type="checkbox" name="en" value="en" checked /><span>English</span>
+		<input type="checkbox" name="noen" value="noen" /><span>Non English</span><br>
+        <label class="leftitem" for="usertype">User Type</label>
+		<select class="rightitem" name="usertype" id="utype">
+            <option class="dropitem" name="Faculty" value="Parent">Faculty</option>
+            <option class="dropitem" name="Parent" value="Faculty">Parent</option>
+            <option class="dropitem" name="Student" value="Student">Student</option>
+        </select> <br>  
+		
+        <label class="leftitem" for="pass" >Password</label>
+        <input class="rightitem" type="password" name="pass" required> <br>
+	 <center><input type="submit" name="submit" value="Submit" /><br></center>
+       <!-- <input type="button" name="submit" value="SignUp"> -->
+        <a id="bottomlink" href="login.html">Already a user</a>
+    </form>
+    
+</body>
+</html>
